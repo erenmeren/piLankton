@@ -1,0 +1,16 @@
+[Unit]
+Description=Printer Service
+After=multi-user.target
+
+[Service]
+Type=idle
+
+User=pi
+ExecStart=/usr/bin/python3 /home/pi/inky-wHat-v1/printer.py
+WorkingDirectory=/home/pi/inky-wHat-v1/
+
+Restart=always
+RestartSec=0
+
+[Install]
+WantedBy=multi-user.target
